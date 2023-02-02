@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:host .mat-icon {
+    vertical-align: middle;
+    margin-right: 1rem;
+    color: rgb(255, 255, 255)    !important;
+    --colorbg: #2a2b36;
+    --colorBgH: #181924;
+    --cui-header-divider-border: 1px solid var(--cui-header-divider-border-color);
+    --cui-header-divider-border-color: rgba(255, 255, 255, 0.1);
+    --cui-header-bg: #2a2b36;
+    --cui-header-color: rgba(255, 255, 255, 0.75);
+    --cui-header-hover-color: rgba(255, 255, 255, 0.9);
+    --cui-header-active-color: #fff;
+    --cui-header-disabled-color: rgba(255, 255, 255, 0.25);
+    --cui-header-brand-color: #fff;
+    --cui-header-brand-hover-color: #fff;
+    --cui-header-toggler-color: rgba(255, 255, 255, 0.75);
+    --cui-header-toggler-hover-color: #fff;
+    --cui-header-toggler-border-color: rgba(255, 255, 255, 0.1);
+    --cui-header-divider-border-color: rgba(255, 255, 255, 0.1);
+    --cui-header-min-height: 4rem;
+    --cui-header-padding-x: 0.5rem;
+    --cui-header-padding-y: 0.5rem;
+    --cui-header-bg: #fff;
+    --cui-header-color: rgba(44, 56, 74, 0.681);
+    --cui-header-border-color: #d8dbe0;
+    --cui-header-border: 1px solid var(--cui-header-border-color);
+    --cui-header-hover-color: rgba(44, 56, 74, 0.95);
+    --cui-header-disabled-color: rgba(44, 56, 74, 0.38);
+    --cui-header-active-color: rgba(44, 56, 74, 0.95);
+    --cui-header-brand-padding-y: 0.3125rem;
+    --cui-header-brand-color: #4f5d73;
+    --cui-header-brand-hover-color: #475468;
+    --cui-header-toggler-padding-x: 0.75rem;
+    --cui-header-toggler-padding-y: 0.25rem;
+    --cui-header-toggler-bg: transparent;
+    --cui-header-toggler-color: rgba(44, 56, 74, 0.681);
+    --cui-header-toggler-border-radius: 0.375rem;
+    --cui-header-toggler-hover-color: rgba(44, 56, 74, 0.95);
+    --cui-header-nav-link-padding-x: 0.5rem;
+    --cui-header-nav-link-padding-y: 0.5rem;
+    --cui-header-divider-border-color: #d8dbe0;
+    --cui-header-divider-border: 1px solid var(--cui-header-divider-border-color);
+    --cui-subheader-min-height: 3rem;
+
+}
+.logo {
+    text-align: center;
+    padding: 2.6rem 1rem;
+}
+.logo img {
+    width: 200px;
+}
+.mat-divider {
+    border-top-width: .5px;
+}
+.mat-list-item {
+    color: rgb(255, 255, 255)    !important;
+    font-size: 0.8rem;
+    height: 44px !important;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mat-list-item:hover {
+    color: black    !important;
+}
+.mat-list-item ::ng-deep .mat-list-item-content {
+    border-radius: 5px;
+    margin: 0 8px;
+}
+.mat-list-item ::ng-deep .mat-list-item-content:hover {
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.5px);
+    -webkit-backdrop-filter: blur(7.5px);
+    color: white;
+  
+
+}
+.list-item-active {
+    color: black    !important;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300
+
+}
+.list-item-active ::ng-deep .mat-list-item-content {
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.5px);
+    -webkit-backdrop-filter: blur(7.5px);
+    color: white;
+}
+.list-item-active ::ng-deep .mat-list-item-content:hover {
+background: rgba(255, 255, 255, 0.3);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(7.5px);
+-webkit-backdrop-filter: blur(7.5px);
+
+}
+.mat-subheader {
+    font-size: 0.6rem;
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+
+
+svg {
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+a span {
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300
+
+}
+
+.image{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-image{
+    width: 150px;
+    height: 150px;
+    background-color: rgba(175, 175, 175, 0.308);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-position: top;
+    margin-top: 30px;
+    position: relative;
+   background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+ 
+.profile-image img{
+    max-width: 150px;
+    position: absolute;
+    max-height: auto;
+    object-fit: cover;
+    z-index: 1;
+
+}
+
+.text-profile{
+    padding-top: 20px;
+    max-width: 200px;
+    text-align: center;
+    color: white;
+    padding-bottom: 50px;
+
+}
+.text-profile h1{
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+.text-profile p {
+    font-size: 12px;
+    text-align: center;
+    font-weight: 600;
+
+}
+
+.text-profile h5{
+    font-weight: 300;
+    padding-bottom: 20px;
+}
+
+@media screen and (max-width:800px) {
+   a span {
+    display: none;
+   }
+   svg {
+    width: 510px;
+    height: 50px;
+    }
+   
+.profile-image{
+    width: 50px;
+    height: 50px;
+
+}
+.profile-image img{
+    max-width: 40px;
+
+}
+.text-profile{
+    padding-top: 20px;
+    max-width: 200px;
+    text-align: center;
+    color: white;
+    padding-bottom: 50px;
+
+}
+.text-profile h1{
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+}
+
+.hoverimg{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+    height: 0px;
+    transition: .2s ease height;
+    cursor: pointer;
+    z-index: 9;
+}
+
+.profile-image:hover .hoverimg{
+        height: 50px;
+}
+
+.hoverimg input{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 999;
+}
+
+.logOut{
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    bottom:20px;
+}

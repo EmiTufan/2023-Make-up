@@ -1,0 +1,87 @@
+<div class="container-fluid page">
+  <div class="d-flex page__box p-3 mt-2">Appointments</div>
+  <div class="modala" *ngIf="modaltext"></div>
+  <div class="page__content shadow p-3 position-relative">
+    <div class="main">
+      <div class="option-data">
+        <h1>Edit Personal Appointments</h1>
+        <div class="row-c">
+         
+          <div class="box-in">
+            <input type="text" placeholder="Full Name" name="FullName" [(ngModel)]="FullName" required=""
+              #name="ngModel" />
+          
+          </div>
+
+          <div class="box-in">
+            <input type="email" placeholder="Email Adress" name="EmailAdress" [(ngModel)]="EmailAdress" #email="ngModel"
+              required="" ngModel [email]="true" />
+          </div>
+
+          <div class="box-in">
+            <input type="text" placeholder="Phone Number" mask="(000) 000-0000" name="PhoneNumber" minlength="10"
+              [(ngModel)]="PhoneNumber" #nr="ngModel" required="" />
+          </div>
+          <div class="box-in">
+            <select name="options" id="cars" (change)="onChange($event)"    >
+              <option value="Tip"  >Tip Machiaj</option>
+              <option value="Time To Shine">Time To Shine</option>
+              <option value="Royal Wedding">Royal Wedding</option>
+              <option value="Perfect Moments">Perfect Moments</option>
+            </select>
+           
+          </div>
+          <div class="box-in">
+            <input disabled placeholder="dwqdqwdwqd" value="{{ price }}" [(ngModel)]="price" />
+          </div>
+          <div class="box-in">
+            <select name="optionsx" id="ora" (change)="onChangex($event)"    >
+              <option value="Ora"  >Select Ora </option>
+              <option value="05:25 - 07:20">05:25 - 07:20 (extra 150 lei)</option>
+              <option value="07:25 - 09:25">07:25 - 09:25</option>
+              <option value="09:30 - 11:30">09:30 - 11:30</option>
+              <option value="11:45 - 13:45">11:45 - 13:45</option>
+              <option value="13:50 - 15:50">13:50 - 15:50</option>
+              <option value="15:55 - 17:55">15:55 - 17:55</option>
+              <option value="18:00 - 20:00">18:00 - 20:00</option>
+            </select>
+
+          </div>
+          <div>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Choose a date</mat-label>
+              <input matInput [matDatepicker]="picker"  (dateChange)="getStartData($event.value)"/>
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <div class="box-in">
+              <label for="textareaa">Enter Description</label>
+              <textarea rows="10" cols="50" class="form-control" id="textareaa" aria-label="With textarea"
+                placeholder="Enter Text" name="formTextarea" [(ngModel)]="formTextarea"></textarea>
+            </div>
+          </div>
+          <div class="alert alert-success" role="alert" *ngIf="messageSucces">
+           {{nameSuccesError}}
+          </div>
+          <div class="alert alert-danger" role="alert" *ngIf="messageError">
+           Error:  {{nameErrorDanger}}
+          </div>
+          <button (click)=" senddata()"  type="submit" class="ss" type="submit" [disabled]="email.errors?.['required'] || email.errors?.['email'] || name.errors?. ['required'] || nr.errors?.['required'] || nr.errors?.['minlength']"   (click)="scrollToTop()">Add Appointment</button>
+        </div>
+      </div>
+
+      <div class="calendar" >
+        <!-- <h1 *ngIf="nodata">No data founds</h1> -->
+        <div class="modalx" *ngIf="modalcalendar">
+          <div class="demo-container">
+            <div class="progress-bar">
+              <div class="progress-bar-value"></div>
+            </div>
+          </div>
+        </div>
+        <full-calendar [options]="calendarOptions"> </full-calendar>
+      </div>
+    </div>
+    
+</div>

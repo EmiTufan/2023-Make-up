@@ -1,0 +1,33 @@
+
+
+
+@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.4/css/lightgallery.css');
+@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.4/css/lg-zoom.css');
+
+img{
+  width: 400px;
+  height: auto;
+}
+
+.container{
+  max-width: 70%;
+  margin:0px auto;
+}
+
+.container .image-container{
+  columns:5 350px;
+  gap:15px;
+}
+
+.container .image-container img{
+  margin-bottom: 10px;
+  border-radius: 5px;
+  width: 100%;
+  transition: all ease .8s;
+}
+
+img:hover {
+  position: relative;
+  z-index: 999;
+  opacity: .4;
+}

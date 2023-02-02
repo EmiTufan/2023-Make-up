@@ -1,0 +1,33 @@
+<div class="main">
+  <div class="bg-blur">
+    <div class="logo">
+      <h1>
+        <a routerLink="/login" id="logo">{{ logo }}</a>
+      </h1>
+    </div>
+    <div class="text-content">
+      <div id='pwcontainer' class="pwcontainer">
+        <h1 class="ctr">{{message}}</h1>
+        <div class="lds-ellipsis" *ngIf="!error && !succes">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="success-animation" *ngIf="succes">
+          <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+            <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+            <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+          </svg>
+        </div>
+        <div class="" *ngIf="error">
+          <div class="circle-border"></div>
+          <div class="circle">
+            <div class="error"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

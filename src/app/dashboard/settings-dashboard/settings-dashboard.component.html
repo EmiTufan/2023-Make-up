@@ -1,0 +1,125 @@
+<div class="container-fluid page">
+  <div class="d-flex page__box p-3 mt-2">Upload Image / Remove Image</div>
+  <div class="page__content shadow p-3 position-relative">
+    <div class="setting">
+      <div class="uploadimg">
+        <div class="formbold-main-wrapper">
+          <!-- Author: FormBold Team --> 
+          <!-- Learn More: https://formbold.com -->
+          <div class="formbold-form-wrapper">
+            <form action="https://formbold.com/s/FORM_ID" method="POST">
+              <div class="mb-6 pt-4">
+                <label class="formbold-form-label formbold-form-label-2">
+                  Upload File
+                </label>
+
+                <div class="formbold-mb-5 formbold-file-input">
+                  <input type="file" id="file" #multipleInput name="image" multiple (change)="selectmultipleimg($event)"
+                    accept="image/*" />
+
+                  <label for="file">
+                    <div>
+                      <span class="formbold-browse"> Browse </span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div>
+                <button type="submit" class="formbold-btn w-full" (click)="onmultiple()">
+                  Send File
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="prev" *ngIf="imageprew">
+        <div *ngIf="succesmsj" class="alert alert-secondary" role="alert" style="
+            font-size: 18px;
+            background: rgb(0, 71, 0);
+            border: none;
+            color: white;
+            text-align: center;
+          ">
+          Succes
+        </div>
+        <div *ngIf="errormsj" class="alert alert-secondary" role="alert" style="
+            font-size: 18px;
+            background: rgb(80, 0, 0);
+            border: none;
+            color: white;
+            text-align: center;
+          ">
+          Error
+        </div>
+        <span style="font-size: 20px" *ngIf="barwidth != '0%'">{{
+          barwidth
+          }}</span>
+        <div class="formbold-progress-bar" *ngIf="barwidth != '0%'">
+          <div class="formbold-progress" [style.width]="barwidth"></div>
+        </div>
+
+        <div class="formbold-file-list formbold-mb-5" *ngFor="let url of urls; let i = index">
+          <div class="formbold-file-item">
+            <span class="textx1">
+              <h1>{{ i + 1 }}</h1>
+            </span>
+            <img [src]="url" width="150px" alt="" srcset="" />
+            <!-- <button (click)="removeUpload(i)">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M0.279337 0.279338C0.651787 -0.0931121 1.25565 -0.0931121 1.6281 0.279338L9.72066 8.3719C10.0931 8.74435 10.0931 9.34821 9.72066 9.72066C9.34821 10.0931 8.74435 10.0931 8.3719 9.72066L0.279337 1.6281C-0.0931125 1.25565 -0.0931125 0.651788 0.279337 0.279338Z"
+                  fill="currentColor" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M0.279337 9.72066C-0.0931125 9.34821 -0.0931125 8.74435 0.279337 8.3719L8.3719 0.279338C8.74435 -0.0931127 9.34821 -0.0931123 9.72066 0.279338C10.0931 0.651787 10.0931 1.25565 9.72066 1.6281L1.6281 9.72066C1.25565 10.0931 0.651787 10.0931 0.279337 9.72066Z"
+                  fill="currentColor" />
+              </svg>
+            </button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid page">
+    <div class="d-flex page__box p-3 mt-2">All image from database <span style="margin-left:5px ;" *ngIf="totalImg != 0"> / {{totalImg}} images</span></div>
+    <div class="page__content shadow p-3 position-relative">
+      <h1 style="color:white ; text-align:center; font-size:1.5rem" *ngIf="totalImg == 0">No image....</h1>
+      <div class="">
+        <div class="allimage" *ngFor="let image of allimg | paginate: { itemsPerPage: 5, currentPage: p }; let i = index" >
+          <div class="formbold-file-list formbold-mb-5">
+            <div class="formbold-file-item">
+              <h1 style="margin: 0; padding:0; color: white; font-size: 1rem; margin-right: 5px;">{{i+1}}</h1>
+              <span class="textx1"> </span>
+              <div class="images">
+               <a [href]="image.img" target="_blank">
+                <div class="hovers">
+                  <svg width="46" height="46" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.5 19a8.5 8.5 0 1 0 0-17 8.5 8.5 0 0 0 0 17Z"></path>
+                    <path d="M13.328 7.172A3.988 3.988 0 0 0 10.5 6a3.988 3.988 0 0 0-2.828 1.172"></path>
+                    <path d="m16.61 16.611 4.244 4.243"></path>
+                  </svg>
+                </div>
+               </a>
+                <img [src]="image.img" alt="" srcset="" />
+              </div>
+
+              <button (click)="removeUpload(image.id)" class="btn">
+                <svg width="30" height="30" fill="none" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4.5 5v17h15V5h-15Z"></path>
+                  <path d="M10 10v6.5"></path>
+                  <path d="M14 10v6.5"></path>
+                  <path d="M2 5h20"></path>
+                  <path d="m8 5 1.645-3h4.744L16 5H8Z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <pagination-controls (pageChange)="p = $event" *ngIf="totalImg != 0" ></pagination-controls>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<mat-toolbar>
+  <mat-toolbar-row class="justify-content-between">
+    <button mat-icon-button (click)="toggleSidebar()">
+      <svg *ngIf="iconNav" width="30" height="30" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 5.5h16"></path>
+        <path d="M4 12h16"></path>
+        <path d="M4 18.5h16"></path>
+        <path d="M6.828 14.829 4 12l2.828-2.828"></path>
+      </svg>
+      <svg *ngIf="!iconNav" width="30" height="30" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 5.5h16"></path>
+        <path d="M4 12h17"></path>
+        <path d="M4 18.5h16"></path>
+        <path d="M18.172 14.829 21 12l-2.828-2.828"></path>
+      </svg>
+    </button>
+  </mat-toolbar-row>
+
+
+
+</mat-toolbar>

@@ -1,0 +1,83 @@
+<mat-nav-list>
+   <div class="image">
+      <div class="profile-image" style="background-image: url({{ProfileImage}});">
+        <div class="hoverimg">
+          <label class="custom-file-upload">
+            <input type="file"  (change)="selectImage($event)"
+            accept="image/*" />
+        </label>
+        
+          <svg width="46" height="46" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.839 10.136a5.002 5.002 0 1 0 2.527 9.675"></path>
+            <path d="M18.027 10.136A5.002 5.002 0 1 1 15.5 19.81"></path>
+            <path d="M18 10a6 6 0 0 0-12 0"></path>
+            <path d="M8.533 13.94 12 10.463 15.566 14"></path>
+            <path d="M12 19v-6.77"></path>
+          </svg>
+        </div>
+      </div>
+     <div class="text-profile">
+      <h1>Tufan Alexandra Florentina</h1>
+      <!-- <p>{{email}}</p> -->
+      <!-- <h5>Owner</h5> -->
+     </div>
+   </div>
+   <div class="header-divider"></div>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard" [routerLinkActiveOptions]="{exact: true}">
+      <svg  fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4.222 20.778A10.966 10.966 0 0 1 1 13C1 6.925 5.925 2 12 2s11 4.925 11 11c0 3.038-1.231 5.788-3.222 7.778"></path>
+        <path d="M7.05 17.95A7 7 0 0 1 12 6"></path>
+        <path d="M12 13V9"></path>
+      </svg> <span  >Dashboard</span>
+    </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard/home">
+      <svg  fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4.5 21V9L2 11l10-8 10 8-2.5-2v12h-15Z"></path>
+        <path d="M9.5 14.5V21h5v-6.5h-5Z"></path>
+        <path d="M4.5 21h15"></path>
+      </svg>
+      <span>Home</span>
+       
+    </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard/profile">
+      <svg  fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"></path>
+        <path d="M21 22a9 9 0 1 0-18 0"></path>
+      </svg>
+      <span>Profile</span>
+       
+    </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard/settings">
+      <svg  fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 22h14a1 1 0 0 0 1-1V7h-5V2H5a1 1 0 0 0-1 1v18a1 1 0 0 0 1 1Z"></path>
+        <path d="m15 2 5 5"></path>
+        <path d="M9 10.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"></path>
+        <path d="M7.5 14v4.5h9v-8l-4.755 5.25L7.5 14Z"></path>
+      </svg>
+      <span>Image</span>
+    </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard/appointment">
+      <svg  fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22 4H2v18h20V4Z"></path>
+        <path d="M14 10v7h4v-7h-4Z" clip-rule="evenodd"></path>
+        <path d="M8.5 2v4"></path>
+        <path d="M15.5 2v4"></path>
+        <path d="M6 10h4v7H6"></path>
+        <path d="M10 13.5H7"></path>
+      </svg>
+      <span>Appointments</span>
+       
+    </a>
+    <div class="logOut">
+      <a mat-list-item routerLinkActive="list-item-active"  (click)="logout()">
+        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.996 3H3v18h9"></path>
+          <path d="M16.5 16.5 21 12l-4.5-4.5"></path>
+          <path d="M8 11.996h13"></path>
+        </svg>
+        <span>Log Out</span>
+         
+      </a>
+    </div>
+   
+  </mat-nav-list>

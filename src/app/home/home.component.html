@@ -1,0 +1,410 @@
+<header [ngClass]="{ active: headerNavBar }">
+  <a class="logo" [routerLink]="['login']">aXF.</a>
+  <div class="main">
+    <div class="theme-container shadow-dark">
+      <svg width="30" (click)="changedark()" *ngIf="!theme" height="30" fill="none" stroke="currentColor"
+        stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 1.5v1.575"></path>
+        <path fill="currentColor" fill-rule="evenodd" stroke="none" d="M19.425 4.575 18.31 5.69l1.114-1.114Z"
+          clip-rule="evenodd"></path>
+        <path d="M19.425 4.575 18.31 5.69"></path>
+        <path d="M22.5 12h-1.575"></path>
+        <path fill="currentColor" fill-rule="evenodd" stroke="none" d="m19.425 19.424-1.114-1.113 1.114 1.113Z"
+          clip-rule="evenodd"></path>
+        <path d="m19.425 19.424-1.114-1.113"></path>
+        <path d="M12 22.5v-1.575"></path>
+        <path fill="currentColor" fill-rule="evenodd" stroke="none" d="m4.575 19.424 1.114-1.113-1.114 1.113Z"
+          clip-rule="evenodd"></path>
+        <path d="m4.575 19.424 1.114-1.113"></path>
+        <path d="M1.5 12h1.575"></path>
+        <path fill="currentColor" fill-rule="evenodd" stroke="none" d="M4.575 4.575 5.69 5.69 4.575 4.575Z"
+          clip-rule="evenodd"></path>
+        <path d="M4.575 4.575 5.69 5.69"></path>
+        <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z"></path>
+      </svg>
+      <svg (click)="changedark()" *ngIf="theme" width="30" height="30" fill="none" stroke="currentColor"
+        stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M14.026 2.205a6.364 6.364 0 1 0 7.768 7.768c.135.655.206 1.333.206 2.027 0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2c.694 0 1.372.07 2.026.205Z">
+        </path>
+      </svg>
+    </div>
+    <div>
+      <svg width="25" height="25" fill="white" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+        stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"></path>
+        <path d="M21 22a9 9 0 1 0-18 0"></path>
+      </svg>
+    </div>
+
+    <div class="singIn">
+      <p [routerLink]="['login']">Login</p>
+    </div>
+
+    <div class="menu">
+      <button class="hamburger hamburger--collapse" type="button" [ngClass]="{ 'is-active': toggle }"
+        (click)="clickEvent($event)">
+        <span class="hamburger-true" *ngIf="!toggle">
+          <svg width="46" height="46" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17 10H3"></path>
+            <path d="M21 6H3"></path>
+            <path d="M21 14H3"></path>
+            <path d="M17 18H3"></path>
+          </svg>
+        </span>
+        <span class="hamburger-false" *ngIf="toggle">
+          <svg width="46" height="46" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 6 6 18"></path>
+            <path d="m6 6 12 12"></path>
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</header>
+<main class="home" [className]="theme ? 'home theme-black' : 'home theme-white'">
+  <div class="imagess">
+    <img src="../../assets/360_F_473789682_zFhtTAvdjkq5d9NkUrWw8yaN8MpoMVRI.jpg" alt="" srcset="" />
+  </div>
+  <div class="container">
+    <div class="hero-text">
+      <h1>
+        <span id="Name">{{firstName || 'Alexandra'}} <span id="alex">{{lastName || 'Tufan'}}</span> </span><br /><span id="iam">I am</span><br />
+        <ngtypewriter [StringList]="list" [speed]="1000"></ngtypewriter>
+      </h1>
+      <div class="desc"> 
+        <p>
+          Luxurious, effortlessly beautiful makeup formulated with clean
+          ingredients and no-compromise integrity Balancing perfect shades and
+          buttery textures that melt into the skin with plant-based actives and
+          cutting-edge science
+        </p>
+      </div>
+      <div class="button">
+        <button>Contact Us</button>
+      </div>
+    </div>
+    <div class="scr">
+      <div class="scroll-down">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+</main>
+<main id="about" [className]="theme ? 'about dark-about' : 'about white-about'">
+  <div class="content-about">
+    <div [className]="theme ? 'img-dark' : 'img-white'"></div>
+    <div class="text">
+      <h1>About Us</h1>
+      <h5>Make-up Artist</h5>
+      <p>We are all different and that makes us unique, for me a successful make-up is when at the end you feel and look good. Through the make-up I do, I want to highlight the natural beauty in a world with more and more artificiality, highlight the special features and hide the small imperfections that we all have. The experience gained in previous years helps me to understand what each client wants beyond words.</p>
+    </div>
+  </div>
+</main>
+<main [className]="theme ? 'service dark-service' : 'service white-service'">
+  <div class="main-service-blur">
+    <h1>Makeup Services</h1>
+    <div class="row">
+      <owl-carousel-o [options]="customOptions" class="ids">
+        <ng-container *ngFor="let image of imagesData">
+          <ng-template carouselSlide>
+            <div class="services">
+              <div class="img-services">
+                <img [src]='image.images' srcset="">
+              </div>
+              <h2>{{image.title}} </h2>
+              <p id="p">{{image.desc}} </p>
+                <button id="btn-info">More Info</button>
+            </div>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+    </div>
+  </div>
+</main>
+<main class="calendar" [className]="theme ? 'calendar dark-calendar' : 'calendar white-calendar'">
+  <div class="blurx">
+    <div class="text-calendar">
+    <h1>Subscribe to our <span>Newsletter</span></h1>
+    <p>Stay up to date with our latest news</p>
+    </div>
+      <div class="box">
+      <form action="">
+        <div class="form-box">
+          <input type="text" placeholder="Enter your email" name="EnterEmail">
+          <button type="submit">Subscribe
+            <svg width="30" height="30" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22 12V4.5H2v15h10"></path>
+              <path d="M22 17h-7"></path>
+              <path d="M19.5 14.5 22 17l-2.5 2.5"></path>
+              <path d="M2 4.5 12 12l10-7.5"></path>
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+<main class="image-galerry ">
+  <div class="content-image active" [ngClass]="{ 'active': photo }">
+    <div class="text-img">
+      <p>PORTFOLIO</p>
+      <h1>Our Gallery</h1>
+    </div>
+    <app-img-galery>
+    </app-img-galery>
+  </div>
+    
+</main>
+<main class="appointment" [ngClass]="{ 'active': photo }">
+  <div class="box" >
+    <div class="scr" [ngClass]="{ 'active': photo }" >
+      <div class="scroll-down" >
+        <div class="bg-span" (click)="photoShow()">
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content-appointment">
+    <div class="content-text">
+      <div class="imggif">
+        <img src="../../assets/trophy-front-premium.png" alt="">
+      </div>
+      <div class="imggif-2">
+        <img src="../../assets/bucket-front-premium.png" alt="">
+      </div>
+      <div class="i-img">
+        <div class="i">
+          <img src="../../assets/logo-login.png" alt="">
+          <h1>Curs de baza  <span> Cornelia Popescu </span> </h1>
+        </div>
+        <div class="i">
+          <img src="../../assets/brush-front-premium.png" alt="">
+          <h1>Master Class Bridal Make-up <span> Maxim Tania </span> </h1>
+        </div>
+        <div class="i">
+          <img src="../../assets/eyedropper-front-premium.png" alt="">
+          <h1>Master Class Ultra Bridal <span> Diana Moraru </span> </h1>
+        </div>
+        <div class="i">
+          <img src="../../assets/colour-palette-front-premium.png" alt="">
+          <h1>Master Class Piele Blindata <span> Lucia Alexandra Calin </span> </h1>
+        </div>
+        <div class="i">
+          <img src="../../assets/fire-front-premium.png" alt="">
+          <h1>Colaboarare <span> Geta Voinea </span> </h1>
+        </div>
+      
+      </div>
+    </div>
+
+    <h1 class="vertical">My <span>Skils</span></h1>
+</div>
+</main>
+
+<main class="video-main">
+    <div class="box-video">
+      <video  muted  id="myVideo" loop="true" autoplay="true" playsinline> 
+        <source  src="../../assets/video/pexels-koolshooters-7692019.mp4" type="video/mp4">
+      </video>
+     <div class="text-video">
+      <div class="content-video">
+        <h1>"Makeup is the finishing touch, the final accessory."</h1>
+      </div>
+     </div>
+    </div>
+</main>
+<main class="price">
+  <div class="content-price">
+   <div class="text">
+    <h1>Special Offer</h1>
+    <h2>Pick a plan that`s for you</h2>
+   </div>
+  <div class="section-price">
+
+    <div class="money-bag">
+      <div class="coins1">
+        <img src="../../assets/euro-dynamic-premium.png" alt="">
+      </div>
+      <div class="coins2">
+        <img src="../../assets/euro-dynamic-premium.png" alt="">
+      </div>
+      <div class="coins3">
+        <img src="../../assets/euro-dynamic-premium.png" alt="">
+      </div>
+      <div class="coins4">
+        <img src="../../assets/euro-dynamic-premium.png" alt="">
+      </div>
+      <div class="coins5">
+        <img src="../../assets/euro-dynamic-premium.png" alt="">
+      </div>
+
+      <img src="../../assets/money-bag-dynamic-premium.png" alt="">
+    </div>
+    <div class="bgcoin">
+      <div class="coins6">
+        <img src="../../assets/euro-dynamic-premium.png" alt="">
+      </div>
+      <div class="coins7">
+        <img src="../../assets/euro-dynamic-premium.png" alt="">
+      </div>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="tabs">
+          <label for="basic" class="tab1 " [ngClass]="{ basic: _one }" (click)="one()">Basic</label>
+          <label for="standard" class="tab2" [ngClass]="{ standard: _tow}" (click)="tow()">Standard</label>
+          <label for="ultimate" class="tab3" [ngClass]="{ ultimate: _three }" (click)="three()">Ultimate</label>
+
+        </div>
+        <div class="info" *ngIf="_one">
+          <div class="info-card">
+            <div class="pricing">150</div>
+            <div class="details">Time To Shine</div>
+                <ul>
+                  <li><svg width="46" height="46" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m5 12 5 5L20 7"></path>
+                  </svg><span>Machiaj fără gene false</span></li>
+                  <li><svg width="46" height="46" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m5 12 5 5L20 7"></path>
+                  </svg><span>Machiaj cu gene false</span></li>
+                  <li><svg width="46" height="46" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m5 12 5 5L20 7"></path>
+                  </svg>Machiaj pentru fotografie</li>
+                  <li><svg width="46" height="46" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m5 12 5 5L20 7"></path>
+                  </svg> <span>Machiaj în tehnica ultrarezistentă</span></li>
+                  <li><svg width="46" height="46" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m5 12 5 5L20 7"></path>
+                  </svg><span>Probă mireasă</span></li>
+                  <li><svg id="red" width="46" height="46" fill="none" stroke="red" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m7 7 10 10"></path>
+                    <path d="M7 17 17 7"></path>
+                  </svg><span>Machiaj de mireasă</span></li>
+                  <li><svg width="46" height="46" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m5 12 5 5L20 7"></path>
+                  </svg><span>Machiaj pentru tenul matur</span></li>
+                  <li><svg id="red" width="46" height="46" fill="none" stroke="red" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m7 7 10 10"></path>
+                    <path d="M7 17 17 7"></path>
+                  </svg><span>Deplasari la domiciliu</span></li>
+                </ul>
+          </div>
+          <!--  -->
+        </div>
+        <div class="info" *ngIf="_tow">
+          <div class="info-card">
+            <div class="pricing">200</div>
+            <div class="details">Royal Wedding</div>
+                <ul>
+                  <li><svg width="46" height="46" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m5 12 5 5L20 7"></path>
+                  </svg><span>Special pentru mirese</span></li>
+                  <li><svg width="46" height="46" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m5 12 5 5L20 7"></path>
+                  </svg><span>Machiaj mireasă VIP</span></li>
+                  <li><svg width="46" height="46" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m5 12 5 5L20 7"></path>
+                  </svg>Machiaj efecte speciale</li>
+                  <li><svg width="46" height="46" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m5 12 5 5L20 7"></path>
+                  </svg> <span>Machiaj în tehnica ultrarezistentă</span></li>
+                  <li><svg width="46" height="46" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m5 12 5 5L20 7"></path>
+                  </svg><span>Stilizare sprancene</span></li>
+                  <li><svg width="46" height="46" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m5 12 5 5L20 7"></path>
+                  </svg><span>Machiaj de mireasă</span></li>
+                  <li><svg width="46" height="46" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m5 12 5 5L20 7"></path>
+                  </svg><span>Machiaj pentru tenul matur</span></li>
+                  <li><svg width="46" height="46" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m5 12 5 5L20 7"></path>
+                  </svg><span>Deplasari la domiciliu (min 5 pers)</span></li>
+                </ul>
+          </div>
+        </div>
+        <div class="info" *ngIf="_three">
+          <div class="info-card">
+            <div class="pricing">250</div>
+            <div class="details">Perfect Moments</div>
+                <ul>
+                  <li><svg width="46" height="46" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m5 12 5 5L20 7"></path>
+                  </svg><span>Machiaj gene false</span></li>
+                  <li><svg width="46" height="46" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m5 12 5 5L20 7"></path>
+                  </svg><span>Pensat inainte</span></li>
+                  <li><svg width="46" height="46" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m5 12 5 5L20 7"></path>
+                  </svg>Machiaj fashion show</li>
+                  <li><svg width="46" height="46" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m5 12 5 5L20 7"></path>
+                  </svg> <span>Machiaj pentru sedinte foto, tv</span></li>
+                  <li><svg width="46" height="46" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m5 12 5 5L20 7"></path>
+                  </svg><span>Planificare makeup wedding</span></li>
+                  <li><svg width="46" height="46" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m5 12 5 5L20 7"></path>
+                  </svg><span>Curs automachiaj online</span></li>
+                  <li><svg width="46" height="46" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m5 12 5 5L20 7"></path>
+                  </svg><span>Make-up Halloween </span></li>
+                  <li><svg width="46" height="46" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m5 12 5 5L20 7"></path>
+                  </svg><span>Deplasari la domiciliu(min 3 pers)</span></li>
+                </ul>
+          </div>
+        </div>
+        <!--  -->
+        <div class="button">
+          <a href="">Choose Plan</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+</main>
+
+<main class="section-calendar">
+  <div class="main-calendar">
+
+    <div class="woman">
+    <div class="circle"></div>
+      <img src="../../assets/_00151.png" alt="" srcset="">
+
+    </div>
+    <div class="text_calendar">
+      <h1>Please login to make an appointment and check availability!</h1>
+      <button class="btn-calendar">Login</button>
+    </div>
+    <div class="calendar-img">
+      <img src="../../assets/Group 713.png" alt="" srcset="">
+    </div>
+  </div>
+</main>
+
+<main class="map">
+  <div class="main-map">
+    <div class="woman-map">
+      <img src="../../assets/_0005 .png" alt="" srcset="">
+    </div>
+    <div class="images-maps">
+      <div class="circleblur"></div>
+      
+      <button class="map-btn" (click)="showmap()"  (click)="myElement.scrollIntoView({ behavior: 'smooth', block: 'start' })" >Show Full Map</button>
+      <img src="../../assets/App - Card.png" alt="" srcset="">
+    </div>
+   
+  </div>
+  <div #myElement class="divmap">
+    <iframe  *ngIf="map"  class="maps "  filter="invert" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2849.685338717135!2d25.99653051582895!3d44.419102279102475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b2005ec28674cd%3A0x225b5dc4acbb1dbf!2sBd.%20Timi%C8%99oara%20101V%2C%20Bucure%C8%99ti%20062103!5e0!3m2!1sro!2sro!4v1667270609952!5m2!1sro!2sro" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
+  </div> 
+  </main>

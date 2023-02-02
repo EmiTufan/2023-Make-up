@@ -1,0 +1,59 @@
+<mat-nav-list>
+    <div class="image">
+       <div class="profile-image" style="background-image: url({{profileimg}});">
+         <div class="hoverimg">
+           <label class="custom-file-upload">
+             <input type="file"  (change)="selectImage($event)"
+             accept="image/*" />
+         </label>
+         
+           <svg width="46" height="46" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+             <path d="M5.839 10.136a5.002 5.002 0 1 0 2.527 9.675"></path>
+             <path d="M18.027 10.136A5.002 5.002 0 1 1 15.5 19.81"></path>
+             <path d="M18 10a6 6 0 0 0-12 0"></path>
+             <path d="M8.533 13.94 12 10.463 15.566 14"></path>
+             <path d="M12 19v-6.77"></path>
+           </svg>
+         </div>
+       </div>
+      <div class="text-profile">
+       <h1>{{lastname}} {{firstname}}</h1>
+       <!-- <p>{{email}}</p> -->
+       <!-- <h5>Owner</h5> -->
+      </div>
+    </div>
+    <div class="header-divider"></div>
+    
+     <a mat-list-item routerLinkActive="list-item-active" routerLink="/client/appointment">
+       <svg  fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M22 4H2v18h20V4Z"></path>
+         <path d="M14 10v7h4v-7h-4Z" clip-rule="evenodd"></path>
+         <path d="M8.5 2v4"></path>
+         <path d="M15.5 2v4"></path>
+         <path d="M6 10h4v7H6"></path>
+         <path d="M10 13.5H7"></path>
+       </svg>
+       <span>Appointments</span>
+        
+     </a>
+     <a mat-list-item routerLinkActive="list-item-active" routerLink="/client/history">
+      <svg  fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2.91 3.363V7h3.636"></path>
+        <path d="M2 12c0 5.523 4.477 10 10 10s10-4.477 10-10S17.523 2 12 2a9.996 9.996 0 0 0-8.662 5"></path>
+        <path d="m12.003 6-.001 6.004 4.24 4.24"></path>
+      </svg>
+      <span>History</span>
+       
+    </a>
+    <div class="logOut">
+     <a mat-list-item routerLinkActive="list-item-active" style="margin-bottom: 50px;" (click)="logOut()"> 
+      <svg  fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11.996 3H3v18h9"></path>
+        <path d="M16.5 16.5 21 12l-4.5-4.5"></path>
+        <path d="M8 11.996h13"></path>
+      </svg>
+      <span>Log Out</span>
+       
+    </a>
+    </div>
+   </mat-nav-list>

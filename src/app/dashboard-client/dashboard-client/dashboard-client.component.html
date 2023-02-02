@@ -1,0 +1,14 @@
+
+  <div class="xmen">
+    <mat-drawer-container style="background: transparent;">
+        <mat-drawer class="trasparent" mode="side" [opened]="sideBarOpen">
+            <app-side-nav-client></app-side-nav-client>
+        </mat-drawer>
+        <mat-drawer-content>
+          <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
+          <router-outlet></router-outlet>
+        </mat-drawer-content>
+      </mat-drawer-container>
+    
+    </div>
+    

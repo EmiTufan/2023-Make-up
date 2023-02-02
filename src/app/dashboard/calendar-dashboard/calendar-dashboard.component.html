@@ -1,0 +1,66 @@
+
+<div class="container-fluid page">
+  <div class="d-flex page__box p-3 mt-2">Appointments</div>
+  <div class="modala" *ngIf="modaltext">
+    <div class="text-modal">
+        <span> <h1 style="font-size: 1.5rem;">You are sure to delete? <br>{{eventtitle}}</h1></span>
+        <div>
+          <button (click)="deletedataCalendar(idevent)">Yes</button>
+          <button (click)="closeModal()">No</button>
+        </div>
+    </div>
+  </div>
+
+  <div class="page__content shadow p-3 position-relative">
+      <div class="main">
+        <div class="option-data">
+          <h1>Edit Personal Appointments</h1>
+          <div class="row-c">
+            <div class="alert alert-success" role="alert" *ngIf="messageSucces">
+             Succes...
+            </div>
+            <div class="alert alert-danger" role="alert" *ngIf="messageError">
+             Error..
+            </div>
+              <div class="box-in">
+                <label for="textareaa">Enter Description</label>
+                <textarea class="form-control" id="textareaa" aria-label="With textarea" placeholder="Enter Text" name="formTextarea" [(ngModel)]="formTextarea"></textarea>
+              </div>
+              <div class="box-in">
+                <input type="text" placeholder="Enter your title" name="formTitle" [(ngModel)]="formTitle" >
+              </div>
+            <div>
+              <mat-form-field appearance="fill" style="color: white;">
+                <mat-label>Enter a date range</mat-label>
+                <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+                  <input matStartDate formControlName="start" placeholder="Start date" (dateChange)="getStartData($event.value)">
+                  <input matEndDate formControlName="end" placeholder="End date"  (dateChange)="getEndData($event.value)">
+                </mat-date-range-input>
+                <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-date-range-picker #picker></mat-date-range-picker>
+              
+                <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
+                <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
+              </mat-form-field>
+            </div>
+            <button type="submit" (click)=" senddata()" class=" ss">Add Appointment</button>
+          </div>
+        </div>  
+
+      <div class="calendar">
+        <!-- <h1 *ngIf="nodata">No data founds</h1> -->
+        <div class="modalx" *ngIf="modalcalendar"> 
+          <div class="demo-container">
+            <div class="progress-bar">
+              <div class="progress-bar-value"></div>
+            </div>
+          </div>
+        </div>
+          <full-calendar [options]="calendarOptions">
+          </full-calendar>
+
+      </div>
+    </div>
+  </div>
+  </div>

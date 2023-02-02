@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<div class="container-fluid page">
+  <div class="d-flex page__box p-3 mt-2">Home</div>
+  <div class="page__content shadow p-3 position-relative">
+    <div class="content">
+      <div class="rox">
+        <h1>Edit Title</h1>
+        <div class="input">
+          <div class="rows">
+            <mat-form-field class="example-form-field">
+              <mat-label>First Name</mat-label>
+              <input matInput type="text" [(ngModel)]="firstName">
+              <button *ngIf="firstName" matSuffix mat-icon-button aria-label="Clear" (click)="firstName=''">
+                <mat-icon>close</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+          <div class="rows">
+            <mat-form-field class="example-form-field">
+              <mat-label>Last Name</mat-label>
+              <input matInput type="text" [(ngModel)]="lastName">
+              <button *ngIf="lastName" matSuffix mat-icon-button aria-label="Clear" (click)="lastName=''">
+                <mat-icon>close</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+          <button class="buttons" mat-button color="accent" (click)="updateTitle()">Update</button>
+          <div class="curentvalue">
+            <mat-form-field class="example-form-field">
+              <input matInput type="text" [(ngModel)]="curentValue" disabled="">
+            </mat-form-field>
+          </div>
+        </div>
+        <h1>Edit Letter</h1>
+        <div class="input">
+          <div class="rows">
+            <mat-form-field class="example-form-field">
+              <mat-label>Letter</mat-label>
+              <input matInput type="text" [(ngModel)]="letter">
+              <button *ngIf="letter" matSuffix mat-icon-button aria-label="Clear" (click)="letter=''">
+                <mat-icon>close</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+          <button class="buttons" mat-button color="accent" (click)="addLetter()">Add</button>
+         <div class="letter">
+          <mat-form-field appearance="fill">
+            <mat-label>All letter</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let food of letters"  disabled>
+               <p>  <svg (click)="deleteletter(food.id)" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 5v17h15V5h-15Z"></path>
+                <path d="M10 10v6.5"></path>
+                <path d="M14 10v6.5"></path>
+                <path d="M2 5h20"></path>
+                <path d="m8 5 1.645-3h4.744L16 5H8Z"></path>
+              </svg>{{food.viewValue}}</p>
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+         </div>
+      </div>
+    </div>
+  </div>

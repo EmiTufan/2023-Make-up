@@ -1,0 +1,13 @@
+
+
+
+  <div class="container">
+    <div class="image-container">
+          <lightgallery [settings]="settings" [onInit]="onInit">
+            <a *ngFor="let item of items " className="gallery-item" [attr.href]="item.src" href="{{ item.src}}">
+              <img className="img-responsive" src="{{ item.src}}" />
+              
+            </a>
+          </lightgallery>
+    </div>
+</div> 
